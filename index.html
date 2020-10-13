@@ -1,0 +1,112 @@
+<!-- El input por defecto es un elemento inline, pero con el selector
+input podemos sobre escribir esa propiedad, para que se renderice 
+cada input en una linea distinta -->
+<style>
+ input[type=text]:focus {
+    background-color: #f1eff3;
+}
+  /* creamos la clase inline-element para especificar que estos elementos
+  deberán de estar en linea uno al lado del otro */
+  .inline-element {
+    display: inline;
+  }
+
+  input[type=password]:focus {
+    background-color: #f1eff3;
+}
+
+input:optional {
+  border-color: gray;
+}
+input:required:valid {
+  border-color: green;
+}
+input:invalid {
+  border-color: red;
+}
+
+input[type=email]:focus {
+    background-color: #f1eff3;
+}
+select {
+    width: 50%;
+    padding: 18px 22px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(75, 4, 4);
+    background-color: #d6cedf;  
+}
+
+input[type=radio]:checked {
+    background-color:#06F;
+    border-left-color:#06F;
+    border-right-color:#06F;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 12px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 32px;
+	height: 32px;
+}
+</style>
+
+<!-- La etiqueta <form> es opcional en ciertos casos, acá la hemos omitido
+para que veas que el HTML es muy permisivo en estos casos. -->
+
+<p>Ingrega tu username:</p>
+<input type="text"  required />
+
+<p>Ingrega tu password:</p>
+<input type="password" required />
+
+
+<p>Ingrega tu email</p>
+<input type="email" required />
+
+<p>Deseo recordar mis datos de login:</p>
+<input type="radio" name="my-input" id="yes">
+<label for="yes">Si</label>
+
+<input type="radio" name="my-input" id="no">
+<label for="no">No</label>
+
+<p>Ingresa tu fecha de nacimiento:</p>
+<input  type="date" data-date-format="DD MMMM YYYY" value="2015-08-09"/>
+
+<p>Escoge tu color favorito</p>
+<input type="color" />
+<span class="inline-element">frio</span>
+
+<!-- con la etiqueta <br> podemos hacer un espacio en blanco -->
+<br />
+<p>El clima en mi ciudad esta:</p>
+
+<span class="slider">caliente</span>
+<input class="slider" type="range"  />
+<br />
+
+<!-- también podemos usar etiqueta span para almacenar texto -->
+<span>Mi plato favorito es:</span>
+
+
+<!-- la etiqueta <select> es un caso especial donde no necesita de una 
+  etiqueta <input> -->
+<select>
+  <option>hamburguesa</option>
+  <option>pizza</option>
+  <option>pasta</option>
+  <option>ensalada</option>
+  <option>todos los anteriores</option>
+</select>
+
